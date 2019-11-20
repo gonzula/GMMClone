@@ -66,6 +66,11 @@ extension ViewController {
             frontTab.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
             frontTab.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
             frontTab.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+
+            frontTab.layer.shadowOffset = CGSize(width: 0, height: -5)
+            frontTab.layer.shadowColor = UIColor.black.cgColor
+            frontTab.layer.shadowRadius = 8
+            frontTab.layer.shadowOpacity = 0.8
         }
     }
 }
