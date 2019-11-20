@@ -72,8 +72,9 @@ extension ViewController {
 
 extension ViewController.View: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        backTabTopConstraint.constant = scrollView.contentOffset.y.lerp(from: 0, lowerPosition - upperPosition,
-                                                                        to: lowerPosition, 0)
+        backTabTopConstraint.constant = scrollView.contentOffset.y
+            .lerp(from: 0, lowerPosition - upperPosition, to: lowerPosition, 0)
+            .clamp(.infinity, 0)
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
